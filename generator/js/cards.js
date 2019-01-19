@@ -252,6 +252,16 @@ function card_element_bullet(params, card_data, options) {
     return result;
 }
 
+function card_element_list(params, card_data, options) {
+    var result = "";
+    result += '<ol class="card-element card-bullet-line">';
+    for (var i=0; i < params.length; i++) {
+        result += '<li class="card-bullet">' + params[i] + '</li>';
+    }
+    result += '</ol>';
+    return result;
+}
+
 function card_element_section(params, card_data, options) {
     var color = card_data_color_front(card_data, options);
     var section = params[0] || "";
@@ -283,6 +293,7 @@ var card_element_generators = {
     center: card_element_center,
     justify: card_element_justify,
     bullet: card_element_bullet,
+    list: card_element_list,
     fill: card_element_fill,
     section: card_element_section,
     disabled: card_element_empty,
