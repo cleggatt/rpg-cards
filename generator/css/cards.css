@@ -256,7 +256,7 @@
 }
 
 .card-stats {
-    width: 100%
+    width: 100%;
 }
 
 .card-stats-header {
@@ -266,6 +266,23 @@
 }
 
 .card-stats-cell {
+    text-align: center;
+    padding: 0;
+}
+
+.card-saves {
+    width: 100%;
+    font-size: inherit;
+    color: black;
+}
+
+.card-saves-header {
+    text-align: center;
+    padding: 0;
+    width: 16.6%;
+}
+
+.card-saves-cell {
     text-align: center;
     padding: 0;
 }

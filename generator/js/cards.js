@@ -264,6 +264,41 @@ function card_element_dndstats(params, card_data, options) {
     return result;
 }
 
+
+function card_element_saves(params, card_data, options) {
+
+    var saves = [0,0,0,0,0,0];
+    for (var i = 0; i < 6; ++i) {
+        saves[i] = parseInt(params[i], 10) || 0;
+        if (saves[i] > 0) {
+            saves[i] = '+' + saves[i];
+        }
+    }
+
+    var result = "";
+    result += '<table class="card-saves">';
+    result += '    <tbody><tr>';
+    result += '      <th class="card-saves-header">STR</th>';
+    result += '      <th class="card-saves-header">DEX</th>';
+    result += '      <th class="card-saves-header">CON</th>';
+    result += '      <th class="card-saves-header">INT</th>';
+    result += '      <th class="card-saves-header">WIS</th>';
+    result += '      <th class="card-saves-header">CHA</th>';
+    result += '    </tr>';
+    result += '    <tr>';
+    result += '      <td class="card-saves-cell">' + saves[0] + '</td>';
+    result += '      <td class="card-saves-cell">' + saves[1] + '</td>';
+    result += '      <td class="card-saves-cell">' + saves[2] + '</td>';
+    result += '      <td class="card-saves-cell">' + saves[3] + '</td>';
+    result += '      <td class="card-saves-cell">' + saves[4] + '</td>';
+    result += '      <td class="card-saves-cell">' + saves[5] + '</td>';
+    result += '    </tr>';
+    result += '  </tbody>';
+    result += '</table>';
+    return result;
+}
+
+
 function card_element_bullet(params, card_data, options) {
     var result = "";
     result += '<ul class="card-element card-bullet-line">';
@@ -310,6 +345,7 @@ var card_element_generators = {
     boxes: card_element_boxes,
     description: card_element_description,
     dndstats: card_element_dndstats,
+    saves: card_element_saves,
     text: card_element_text,
     center: card_element_center,
     justify: card_element_justify,
