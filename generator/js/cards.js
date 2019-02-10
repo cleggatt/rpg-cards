@@ -174,6 +174,26 @@ function card_element_property(params, card_data, options) {
     return result;
 }
 
+function card_element_property_table(params, card_data, options) {
+    var result = "";
+    result += '<div class="card-element property-table">';
+    for (var i = 0; i < params.length; i = i + 2) {
+        if (i == 0) {
+            result += '   <div class="property-cell-first">';
+        } else if (i == (params.length - 2)) {
+            result += '   <div class="property-cell-last">';
+        } else {
+            result += '   <div class="property-cell">';
+        }
+        result += '       <h4 class="card-property-name">' + params[i] + '</h4>';
+        result += '       <p class="card-property-text">' + params[i + 1] + '</p>';
+        result += '   </div>';
+
+    }
+    result += '</div>';
+    return result;
+}
+
 function card_element_description(params, card_data, options) {
     var result = "";
     result += '<div class="card-element card-description-line">';
@@ -284,6 +304,7 @@ function card_element_empty(params, card_data, options) {
 var card_element_generators = {
     subtitle: card_element_subtitle,
     property: card_element_property,
+    properties: card_element_property_table,
     rule: card_element_ruler,
     ruler: card_element_ruler,
     boxes: card_element_boxes,

@@ -166,6 +166,28 @@
     align-self: center;
 }
 
+.property-table {
+    display: grid;
+    grid-auto-columns: 1fr;
+    font-size: inherit;
+    color: black;
+}
+
+.property-cell {
+    grid-row: 1;
+    text-align: center;
+}
+
+.property-cell-first {
+    grid-row: 1;
+    text-align: left;
+}
+
+.property-cell-last {
+    grid-row: 1;
+    text-align: right;
+}
+
 .card-property-line {
     text-indent: -1em;
     margin-left: 1em;
